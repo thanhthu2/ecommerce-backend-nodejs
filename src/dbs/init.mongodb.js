@@ -1,4 +1,8 @@
 const mongoose = require("mongoose");
+// const {
+//   db: { host, name, port },
+// } = require("../configs/config.mongodb");
+
 const { countConnect } = require("../helpers/check.connect");
 const connectString = `mongodb+srv://hakimanhqwe:hakimanhqwe@cluster0.mw7ch.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
