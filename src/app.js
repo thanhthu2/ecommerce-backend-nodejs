@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan"); // dùng để in log
 const helmet = require("helmet"); // dùng để bảo vệ header
 const compression = require("compression"); //tối ưu size
+const { checkOverload } = require("./helpers/check.connect");
 
 const app = express();
 
@@ -15,7 +16,8 @@ app.use(compression());
 //init middlewares
 
 //init db
-
+require('./dbs/init.mongodb')
+checkOverload()
 //init routes
 app.get("/", (req, res, next) => {
   const strCompress = " Hello Factipjs";
