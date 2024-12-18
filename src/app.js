@@ -9,12 +9,14 @@ const app = express();
 console.log(`Process::`, process.env);
 //init middlewares
 app.use(morgan("dev"));
-// morgan("combined"); kiểu log
-// morgan("common"); kiểu log
-// morgan("short"); kiểu log
-// morgan("tiny"); kiểu log
 app.use(helmet());
 app.use(compression());
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 
 //init db
 require("./dbs/init.mongodb");

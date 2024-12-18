@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 // } = require("../configs/config.mongodb");
 
 const { countConnect } = require("../helpers/check.connect");
-const connectString = `mongodb+srv://hakimanhqwe:hakimanhqwe@cluster0.mw7ch.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+const connectString = `mongodb://localhost:27017/shopDEV`;
 
 class Database {
   constructor() {

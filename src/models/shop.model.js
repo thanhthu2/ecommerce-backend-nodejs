@@ -1,10 +1,10 @@
-const { model, Schema, Types, Collection } = require("mongoose"); // Erase if already required
+const { model, Schema } = require("mongoose"); // Erase if already required
 
 const DOCUMENT_NAME = "Shop";
 const COLLECTION_NAME = "Shops";
 
 // Declare the Schema of the Mongo model
-var shopSchema = new mongoose.Schema(
+var shopSchema = new Schema(
   {
     name: {
       type: String,
@@ -22,7 +22,7 @@ var shopSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["active,inactive"],
+      enum: ["active","inactive"],
       default: "inactive",
     },
     verify: {
@@ -41,4 +41,4 @@ var shopSchema = new mongoose.Schema(
 );
 
 //Export the model
-module.exports = mongoose.model(DOCUMENT_NAME, shopSchema);
+module.exports = model(DOCUMENT_NAME, shopSchema);
