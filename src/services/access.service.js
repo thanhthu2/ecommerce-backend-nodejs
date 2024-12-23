@@ -19,7 +19,6 @@ const RoleShop = {
 class AccessService {
   static signUp = async ({ name, email, password }) => {
     //step1: check email exits??
-    a
     const holdeShop = await shopModel.findOne({ email }).lean();
     if (holdeShop) {
       throw new BadRequestError("Error: Shop already registerd!");
